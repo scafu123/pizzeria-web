@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Bevande - Pizzeria Da Marco</title>
+    <style>
+        /* Reset e stile base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #fef9e7 0%, #fdebd0 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #2c3e50;
+        }
+
+        /* Header principale */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header::before,
+        .header::after {
+            content: '🍕';
+            font-size: 2rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .header::before { left: 20%; }
+        .header::after { right: 20%; }
+
+        h1 {
+            font-size: 3rem;
+            color: #c0392b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        /* Navigazione */
+        nav {
+            background-color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #c0392b;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #c0392b;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Container principale */
+        .menu-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .menu-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #d35400;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .menu-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d35400, transparent);
+            margin: 15px auto 0;
+        }
+
+        /* Tabella migliorata */
+        .beverage-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .beverage-table thead th {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+        }
+
+        .beverage-table tbody tr {
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .beverage-table tbody tr:hover {
+            background: linear-gradient(90deg, #fff5e6 0%, #ffe4c4 100%);
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .beverage-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .beverage-table td {
+            padding: 18px 20px;
+            border: none;
+        }
+
+        .beverage-table td:first-child {
+            font-weight: bold;
+            color: #c0392b;
+            font-size: 1.1rem;
+        }
+
+        .beverage-table td:last-child {
+            text-align: right;
+            font-weight: bold;
+            color: #27ae60;
+            font-size: 1.2rem;
+        }
+
+        /* Badge per tipo bevanda */
+        .beverage-type {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 10px;
+        }
+
+        .type-water { background: #e3f2fd; color: #1976d2; }
+        .type-soft { background: #fce4ec; color: #c2185b; }
+        .type-beer { background: #fff3e0; color: #e65100; }
+        .type-wine { background: #f3e5f5; color: #7b1fa2; }
+        .type-coffee { background: #efebe9; color: #5d4037; }
+
+        /* Footer link */
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #d35400 0%, #e67e22 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3);
+            transition: all 0.3s ease;
+            max-width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(211, 84, 0, 0.4);
+        }
+
+        /* Decorazioni ai lati */
+        .decorations {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .decorations::before,
+        .decorations::after {
+            content: '🍷';
+            font-size: 150px;
+            position: absolute;
+            opacity: 0.1;
+        }
+
+        .decorations::before {
+            top: 10%;
+            left: 5%;
+        }
+
+        .decorations::after {
+            content: '🥂';
+            bottom: 10%;
+            right: 5%;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .beverage-table {
+                font-size: 0.9rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                padding: 10px 15px;
+            }
+            
+            nav a {
+                margin: 0 5px;
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="decorations"></div>
+
+    <header class="header">
+        <h1>Le Bevande</h1>
+        <p class="subtitle">Pizzeria Da Marco - Gusto e Tradizione</p>
+    </header>
+    
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="pizze.html">🍕 Le Pizze</a>
+        <a href="dolci.html">🍰 I Dolci</a>
+    </nav>
+
+    <div class="menu-container">
+        <h3 class="menu-title">Cosa beviamo stasera?</h3>
+        
+        <!-- Tabella Bevande migliorata -->
+        <table class="beverage-table">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descrizione</th>
+                    <th>Prezzo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="beverage-type type-water">💧 Acqua</span></td>
+                    <td>Minerale (Naturale o Frizzante)</td>
+                    <td>€ 1.50</td>
+                </tr>
+                <tr>
+                    <td><span class="beverage-type type-soft">🥤 Bibite</span></td>
+                    <td>Coca Cola, Fanta, Sprite</td>
+                    <td>€ 2.00</td>
+                </tr>
+                <tr>
+                    <td><span class="beverage-type type-beer">🍺 Birra</span></td>
+                    <td>Alla spina (Bionda)</td>
+                    <td>€ 3.50</td>
+                </tr>
+                <tr>
+                    <td><span class="beverage-type type-wine">🍷 Vino</span></td>
+                    <td>Rosso della casa (1/2 Litro)</td>
+                    <td>€ 4.00</td>
+                </tr>
+                <tr>
+                    <td><span class="beverage-type type-coffee">☕ Caffè</span></td>
+                    <td>Espresso</td>
+                    <td>€ 1.20</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="index.html" class="back-link">← Torna alla Home</a>
+    </div>
+
+</body>
+</html>

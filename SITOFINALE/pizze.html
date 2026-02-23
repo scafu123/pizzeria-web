@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Pizze - La Pizzeria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #c0392b;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #c0392b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .pizza-section {
+            margin-bottom: 30px;
+        }
+        .pizza-section h2 {
+            color: #e67e22;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 10px;
+        }
+        .pizza-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .pizza-name {
+            font-weight: bold;
+            color: #333;
+        }
+        .pizza-desc {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .pizza-price {
+            color: #c0392b;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .note {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Torna alla Homepage</a>
+        
+        <h1>🍕 Il Nostro Menu</h1>
+        
+        <div class="pizza-section">
+            <h2>Pizze Classiche</h2>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Margherita</div>
+                    <div class="pizza-desc">Pomodoro, mozzarella, basilico</div>
+                </div>
+                <div class="pizza-price">€6,00</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Marinara</div>
+                    <div class="pizza-desc">Pomodoro, aglio, origano</div>
+                </div>
+                <div class="pizza-price">€5,00</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Napoletana</div>
+                    <div class="pizza-desc">Pomodoro, mozzarella, alici, capperi</div>
+                </div>
+                <div class="pizza-price">€7,00</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Funghi</div>
+                    <div class="pizza-desc">Pomodoro, mozzarella, funghi porcini</div>
+                </div>
+                <div class="pizza-price">€7,50</div>
+            </div>
+        </div>
+        
+        <div class="pizza-section">
+            <h2>Pizze Speciali</h2>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Quattro Stagioni</div>
+                    <div class="pizza-desc">Pomodoro, mozzarella, prosciutto, funghi, carciofi, olive</div>
+                </div>
+                <div class="pizza-price">€8,50</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Diavola</div>
+                    <div class="pizza-desc">Pomodoro, mozzarella, salame piccante</div>
+                </div>
+                <div class="pizza-price">€7,50</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Bufalina</div>
+                    <div class="pizza-desc">Pomodoro, mozzarella di bufala, basilico</div>
+                </div>
+                <div class="pizza-price">€8,00</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Carbonara</div>
+                    <div class="pizza-desc">Mozzarella, pancetta, uovo, parmigiano</div>
+                </div>
+                <div class="pizza-price">€8,00</div>
+            </div>
+        </div>
+        
+        <div class="pizza-section">
+            <h2>Pizze Bianche</h2>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Ortolana</div>
+                    <div class="pizza-desc">Mozzarella, zucchine, melanzane, peperoni</div>
+                </div>
+                <div class="pizza-price">€8,00</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div>
+                    <div class="pizza-name">Prosciutto e Funghi</div>
+                    <div class="pizza-desc">Mozzarella, prosciutto cotto, funghi</div>
+                </div>
+                <div class="pizza-price">€7,50</div>
+            </div>
+        </div>
+        
+        <div class="note">
+            <strong>Note:</strong> Tutte le pizze sono disponibili anche in versione <strong>mezza</strong> al prezzo di €4,50.
+            Per intolleranze e allergie, chiedi al nostro personale.
+        </div>
+    </div>
+</body>
+</html>

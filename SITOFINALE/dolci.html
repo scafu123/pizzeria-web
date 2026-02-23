@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts - La Pizzeria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff9f0 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(192, 57, 43, 0.1);
+            border: 1px solid rgba(192, 57, 43, 0.1);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 30px;
+            color: #c0392b;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            background: #fff5f5;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: #c0392b;
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        h1 {
+            color: #c0392b;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        h1::after {
+            content: '🍰';
+            display: block;
+            font-size: 3rem;
+            margin-top: 10px;
+        }
+        
+        h1::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #c0392b, #e67e22);
+            border-radius: 2px;
+        }
+        
+        .pizza-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px dashed #f0f0f0;
+        }
+        
+        .pizza-section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .pizza-section h2 {
+            color: #e67e22;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ffeaa7;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .pizza-section h2::before {
+            content: '✦';
+            margin-right: 10px;
+            color: #c0392b;
+        }
+        
+        .pizza-section h2::after {
+            content: '✦';
+            margin-left: 10px;
+            color: #c0392b;
+        }
+        
+        .pizza-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #fafafa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .pizza-item:hover {
+            background: #fff5f5;
+            border-color: #ffeaa7;
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(230, 126, 34, 0.15);
+        }
+        
+        .pizza-info {
+            flex: 1;
+        }
+        
+        .pizza-name {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .pizza-desc {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .pizza-price {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-left: 20px;
+            box-shadow: 0 3px 10px rgba(192, 57, 43, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .pizza-item:hover .pizza-price {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.4);
+        }
+        
+        .note {
+            background: linear-gradient(135deg, #fff9e6, #fff3cd);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+            position: relative;
+        }
+        
+        .note::before {
+            content: '💡';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #fff9e6;
+            padding: 5px;
+            border-radius: 50%;
+        }
+        
+        .note strong {
+            color: #c0392b;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .pizza-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .pizza-price {
+                margin-left: 0;
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Torna alla Homepage</a>
+        
+        <h1>I Nostri Dolci</h1>
+        
+        <div class="pizza-section">
+            <h2>Dolci della Casa</h2>
+            
+            <div class="pizza-item">
+                <div class="pizza-info">
+                    <div class="pizza-name">Tiramisù</div>
+                    <div class="pizza-desc">Classico dolce al mascarpone e caffè</div>
+                </div>
+                <div class="pizza-price">€5,00</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div class="pizza-info">
+                    <div class="pizza-name">Panna Cotta</div>
+                    <div class="pizza-desc">Con salsa al caramello</div>
+                </div>
+                <div class="pizza-price">€4,50</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div class="pizza-info">
+                    <div class="pizza-name">Cheesecake</div>
+                    <div class="pizza-desc">Al fragole o cioccolato</div>
+                </div>
+                <div class="pizza-price">€5,00</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div class="pizza-info">
+                    <div class="pizza-name">Profiterole</div>
+                    <div class="pizza-desc">Palline di gelato con cioccolato caldo</div>
+                </div>
+                <div class="pizza-price">€5,50</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div class="pizza-info">
+                    <div class="pizza-name">Torta della Nonna</div>
+                    <div class="pizza-desc">Con crema pasticcera e pinoli</div>
+                </div>
+                <div class="pizza-price">€4,50</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div class="pizza-info">
+                    <div class="pizza-name">Brownie al Cioccolato</div>
+                    <div class="pizza-desc">Con nocciole e gelato alla vaniglia</div>
+                </div>
+                <div class="pizza-price">€5,00</div>
+            </div>
+        </div>
+        
+        <div class="pizza-section">
+            <h2>Gelati</h2>
+            
+            <div class="pizza-item">
+                <div class="pizza-info">
+                    <div class="pizza-name">Coppa Gelato</div>
+                    <div class="pizza-desc">3 gusti a scelta</div>
+                </div>
+                <div class="pizza-price">€4,00</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div class="pizza-info">
+                    <div class="pizza-name">Cioccolato Fondente</div>
+                    <div class="pizza-desc">Coppa monoporzione</div>
+                </div>
+                <div class="pizza-price">€3,50</div>
+            </div>
+            
+            <div class="pizza-item">
+                <div class="pizza-info">
+                    <div class="pizza-name">Frutta con Gelato</div>
+                    <div class="pizza-desc">Macedonia con una pallina di gelato</div>
+                </div>
+                <div class="pizza-price">€4,50</div>
+            </div>
+        </div>
+        
+        <div class="note">
+            <strong>Note:</strong> I dolci possono variare in base alla disponibilità stagionale.
+            Per intolleranze e allergie, chiedi al nostro personale.
+        </div>
+    </div>
+</body>
+</html>
+```

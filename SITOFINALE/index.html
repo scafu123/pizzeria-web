@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Da u Scafu - Home</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-align: center; 
+            background: linear-gradient(135deg, #fef9e7 0%, #fdebd0 100%);
+            margin: 0; 
+            padding: 20px; 
+            min-height: 100vh;
+        }
+        
+        h1 { 
+            color: #c0392b; 
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .pizzeria-image {
+            max-width: 100%;
+            width: 600px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            margin: 20px 0;
+            border: 5px solid white;
+            transition: transform 0.3s ease;
+        }
+        
+        .pizzeria-image:hover {
+            transform: scale(1.03);
+        }
+        
+        nav { 
+            margin: 25px 0; 
+            background-color: #fff; 
+            padding: 15px 30px; 
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        nav a { 
+            margin: 0 15px; 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: bold; 
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover { 
+            color: #fff;
+            background-color: #c0392b;
+        }
+        
+        .intro { 
+            max-width: 700px; 
+            margin: 30px auto; 
+            line-height: 1.8;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .intro h2 {
+            color: #d35400;
+            margin-bottom: 20px;
+        }
+        
+        .intro p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        .highlights {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .highlight-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            width: 150px;
+        }
+        
+        .highlight-item span {
+            font-size: 2.5rem;
+            display: block;
+        }
+        
+        .highlight-item p {
+            margin: 10px 0 0;
+            font-weight: bold;
+            color: #c0392b;
+        }
+        
+        .cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(192, 57, 43, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🍕 Pizzeria Da u Scafu</h1>
+
+    <!-- Foto della pizzeria -->
+    <img 
+        src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80" 
+        alt="La nostra pizzeria" 
+        class="pizzeria-image"
+    >
+
+    <!-- Menu di navigazione -->
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="pizze.html">🍕 Le Nostre Pizze</a>
+        <a href="dolci.html">🍰 I Dolci</a>
+        <a href="bevande.html">🍷 Le Bevande</a>
+    </nav>
+
+    <div class="intro">
+        <h2>Benvenuti nella nostra pizzeria!</h2>
+        <p>
+            Siamo felici di avervi qui. Utilizziamo solo ingredienti freschi e di qualità 
+            per prepararvi pizze gustose e croccanti.
+        </p>
+        <p>
+            Potete scegliere tra le nostre specialità tradizionali, i dolci fatti in casa 
+            e bevvi una buona birra o un vino selezionato.
+        </p>
+        
+        <!-- Highlight -->
+        <div class="highlights">
+            <div class="highlight-item">
+                <span>🍕</span>
+                <p>Pizze Artigianali</p>
+            </div>
+            <div class="highlight-item">
+                <span>🍷</span>
+                <p>Vini Selezionati</p>
+            </div>
+            <div class="highlight-item">
+                <span>👨‍🍳</span>
+                <p>Cucina Casalinga</p>
+            </div>
+        </div>
+        
+        <p><strong>Venite a trovarci!</strong></p>
+        
+        <a href="pizze.html" class="cta">Guarda il Menu →</a>
+    </div>
+
+</body>
+</html>
