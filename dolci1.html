@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Nostri Dolci - Pizzeria da u scafu</title>
+    <style>
+        /* Stili base per la pagina */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfbf7; /* Colore crema/pizza */
+            color: #333;
+        }
+
+        /* Intestazione */
+        header {
+            background-color: #d32f2f; /* Rosso pizzeria */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-weight: 300;
+            font-size: 1.2em;
+        }
+
+        /* Contenitore principale */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Griglia per i dolci */
+        .menu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Singola scheda dolce */
+        .dolce-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: row; /* Immagine a sinistra */
+            align-items: center;
+        }
+
+        /* Stile immagine */
+        .dolce-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        /* Testo descrizione */
+        .dolce-info {
+            padding: 20px;
+        }
+
+        .dolce-info h3 {
+            margin-top: 0;
+            color: #d32f2f;
+        }
+
+        .dolce-info p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Responsive: se lo schermo è piccolo, metti l'immagine sopra */
+        @media (max-width: 600px) {
+            .dolce-item {
+                flex-direction: column;
+            }
+            .dolce-img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        /* Link di ritorno */
+        .back-link {
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pizzeria da u scafu</h1>
+        <h2>I Nostri Dolci</h2>
+    </header>
+
+    <div class="container">
+        <div class="menu-grid">
+
+            <!-- Dolce 1 -->
+            <article class="dolce-item">
+                <!-- CAMBIA 'src' CON IL TUO FILE IMMAGINE (es. tiramisu.jpg) -->
+                <img src="https://placehold.co/400x400/d32f2f/white?text=Tiramis%C3%B9" alt="Tiramisù" class="dolce-img">
+                <div class="dolce-info">
+                    <h3>Tiramisù Classico</h3>
+                    <p>Il classico dolce italiano con savoiardi, mascarpone, uova e cacao. Unmust per finire in bellezza.</p>
+                </div>
+            </article>
+
+            <!-- Dolce 2 -->
+            <article class="dolce-item">
+                <!-- CAMBIA 'src' CON IL TUO FILE IMMAGINE -->
+                <img src="https://placehold.co/400x400/ffa000/white?text=Cheesecake" alt="Cheesecake" class="dolce-img">
+                <div class="dolce-info">
+                    <h3>Cheesecake alla Fragola</h3>
+                    <p>Base di biscotti, crema di formaggio fresco e topping alla fragola. Cremoso e freschissimo.</p>
+                </div>
+            </article>
+
+            <!-- Dolce 3 -->
+            <article class="dolce-item">
+                <!-- CAMBIA 'src' CON IL TUO FILE IMMAGINE -->
+                <img src="https://placehold.co/400x400/2e7d32/white?text=Panna+Cotta" alt="Panna Cotta" class="dolce-img">
+                <div class="dolce-info">
+                    <h3>Panna Cotta</h3>
+                    <p>Panna cotta con cuore di cioccolato fondente e accompagnata da frutti rossi.</p>
+                </div>
+            </article>
+
+            <!-- Dolce 4 -->
+            <article class="dolce-item">
+                <!-- CAMBIA 'src' CON IL TUO FILE IMMAGINE -->
+                <img src="https://placehold.co/400x400/5d4037/white?text=Sfogliatelle" alt="Sfogliatelle" class="dolce-img">
+                <div class="dolce-info">
+                    <h3>Sfogliatelle Ricce</h3>
+                    <p>La tradizione napoletana per eccellenza, con ricotta e pezzi di arancia candita.</p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Link per tornare alla home -->
+        <a href="index.html" class="back-link">&larr; Torna alla Home</a>
+    </div>
+
+    <footer>
+        &copy; 2023 Pizzeria da u scafu. Tutti i diritti riservati.
+    </footer>
+
+</body>
+</html>
